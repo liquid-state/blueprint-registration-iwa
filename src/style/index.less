@@ -1,0 +1,79 @@
+@import "~antd/dist/antd.less";
+// @import "~@liquid-state/ui-theme-liquid-state/theme.less"; Insert your custom theme less file here.
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  min-height: 100vh;
+
+  .bottom-container {
+    margin-top: auto;
+  }
+
+  .fixed-width-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+      width: 704px;
+    }
+  }
+
+  .header-image {
+    margin-bottom: @padding-lg;
+    max-height: 164px;
+    margin: -32px -32px;
+    margin-bottom: @padding-lg;
+    background-color: #f1f1f1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: @padding-lg;
+    }
+  }
+}
+
+// Common helpers.
+.text-center {
+  text-align: center;
+}
+
+.with-icon {
+  display: flex;
+  justify-content: space-between;
+
+  .anticon {
+    font-size: @font-size-lg;
+    color: @primary-color;
+  }
+}
+
+.theme-color {
+  color: @primary-color;
+}
+
+.title {
+  text-align: center;
+}
+
+.logo {
+  align-self: center;
+  margin-bottom: @padding-lg;
+  max-height: 164px;
+  margin-top: -32px;
+}
+
+// Spacing for components, should be moved to theme.
+
+#root .ant-alert { //More specific than the antd default.
+  margin-bottom: @padding-md;
+}

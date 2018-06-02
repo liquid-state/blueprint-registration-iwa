@@ -1,0 +1,67 @@
+{
+  "name": "registration-iwa",
+  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "homepage_comment": "Liquid State IWAs must be able to load from file system, therefore homepage must be relative.",
+  "homepage": "./",
+  "author": {
+    "name": "Liquid State",
+    "email": "dev@liquid-state.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:liquid-state/blueprint-registration-iwa.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "lint": "eslint ./src --ext .js,.jsx",
+    "lint:fix": "eslint ./src --fix --ext .js,.jsx",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "theme": "@liquid-state/ui-theme-liquid-state",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@liquid-state/iwa-core": "^1",
+    "@liquid-state/iwa-router": "^1",
+    "@liquid-state/ui-kit": "^0.2",
+    "@liquid-state/ui-theme-liquid-state": "^0.1.1",
+    "antd": "^3.2.0",
+    "history": "^4.7.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.3.15",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-import": "^1.6.5",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.15.0-rc.13",
+    "lint-staged": "^7.0.0",
+    "react-app-rewire-eslint": "^0.2.3",
+    "react-app-rewire-less": "^2.1.0",
+    "react-app-rewired": "^1.4.1"
+  }
+}

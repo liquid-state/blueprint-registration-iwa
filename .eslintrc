@@ -1,0 +1,20 @@
+{
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "rules": {
+        "prefer-const": ["error", {
+            "destructuring": "all"
+        }],
+        "react/jsx-filename-extension": 0,
+        "react/forbid-prop-types": ["warn", {
+            "forbid": ["any"]
+        }],
+        "jsx-a11y/anchor-is-valid": ["error", {
+            "components": ["Link"],
+            "specialLink": ["to"]
+        }]
+    },
+    "env": {
+        "browser": true
+    }
+}
