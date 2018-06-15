@@ -19,7 +19,7 @@
     "build": "react-app-rewired build",
     "lint": "eslint ./src --ext .js,.jsx",
     "lint:fix": "eslint ./src --fix --ext .js,.jsx",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
@@ -64,6 +64,7 @@
   "devDependencies": {
     "@storybook/react": "^3.3.15",
     "babel-eslint": "^8.2.2",
+    "babel-jest": "<21",
     "babel-plugin-import": "^1.6.5",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -75,5 +76,13 @@
     "react-app-rewire-eslint": "^0.2.3",
     "react-app-rewire-less": "^2.1.0",
     "react-app-rewired": "^1.4.1"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!@liquid-state/.*)"
+    ]
+  },
+  "babel": {
+    "presets": "react-app"
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Icon, Modal } from 'antd';
 import { Button, Pager } from '@liquid-state/ui-kit';
 
@@ -8,8 +9,9 @@ import { COMPANY_NAME, CONTACT } from '../../const';
 import PinnedToBottom from '../../components/Layout/PinnedToBottom';
 import Title from '../../components/Title';
 import Form from './Form';
+import { codeSubmitted } from '../../redux/actions/code';
 
-class Home extends Component {
+export class HomePage extends Component {
   state = {
     isVisible: false,
   };
@@ -67,13 +69,21 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
+HomePage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   error: PropTypes.string,
 };
 
-Home.defaultProps = {
+HomePage.defaultProps = {
   error: undefined,
 };
 
-export default Home;
+const mapStateToProps = state => ({
+  error: state.code.error,
+});
+
+const actions = {
+  onSubmit: codeSubmitted,
+};
+
+export default connect(mapStateToProps, actions)(HomePage);
