@@ -1,6 +1,6 @@
 import React from 'react';
 import { configure, addDecorator, action } from '@storybook/react';
-import { Router } from '../src/routing';
+import { Router } from 'react-router';
 import createMemoryHistory from 'history/createMemoryHistory';
 import '../src/style/index.less';
 import Container from '../src/components/Layout/Container';
@@ -17,7 +17,7 @@ function bindRouting() {
   history.goBack = action('history.goBack');
   history.goForward = action('history.goForward');
 
-  addDecorator(story => <Router historyFactory={() => history}>{story()}</Router>);
+  addDecorator(story => <Router history={history}>{story()}</Router>);
   addDecorator(story => <Container fixed>{story()}</Container>)
 
   return (route) => history.set(route);
